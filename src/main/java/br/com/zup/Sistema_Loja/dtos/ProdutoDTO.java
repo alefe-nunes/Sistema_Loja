@@ -8,7 +8,7 @@ public class ProdutoDTO {
     @NotBlank(message = "{validacao.nome.produto}")
     private String nome;
 
-    @NotBlank(message = "{validacao.nome.preco}")
+    @Min(value = 1, message = "{validacao.preco.produto}")
     private double preco;
 
     @Min(value = 1, message = "{validacao.quantidade.produto}")
