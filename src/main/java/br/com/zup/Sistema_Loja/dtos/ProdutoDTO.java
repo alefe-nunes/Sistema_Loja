@@ -1,9 +1,17 @@
 package br.com.zup.Sistema_Loja.dtos;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+
 public class ProdutoDTO {
 
+    @NotBlank(message = "{validacao.nome.produto}")
     private String nome;
+
+    @NotBlank(message = "{validacao.nome.preco}")
     private double preco;
+
+    @Min(value = 1, message = "{validacao.quantidade.produto}")
     private int quantidade;
 
     public ProdutoDTO() {

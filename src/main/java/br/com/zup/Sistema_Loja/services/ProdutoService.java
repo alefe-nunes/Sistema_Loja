@@ -1,6 +1,7 @@
 package br.com.zup.Sistema_Loja.services;
 
 import br.com.zup.Sistema_Loja.dtos.ProdutoDTO;
+import br.com.zup.Sistema_Loja.exceptions.ProdutoJaCadastradoException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class ProdutoService {
 
         for (ProdutoDTO produto : produtos) {
             if (produto.getNome().equals(nome)) {
-                throw new RuntimeException("Produto já cadastrado no sistema");
+                throw new ProdutoJaCadastradoException("Produto já cadastrado no sistema");
             }
 
         }

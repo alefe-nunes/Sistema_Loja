@@ -6,9 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
-@RequestMapping
+@RequestMapping ("/cliente")
 @RestController
 public class ClienteController {
 
@@ -17,7 +18,7 @@ public class ClienteController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void cadastrarCliente(@RequestBody ClienteDTO cliente) {
+    public void cadastrarCliente(@RequestBody @Valid ClienteDTO cliente) {
         clienteService.cadastrarCliente(cliente);
     }
 

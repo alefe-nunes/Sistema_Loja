@@ -10,5 +10,5 @@ import org.springframework.web.bind.annotation.RestController;
 public class CompraController {
 
     @Autowired
-    private CompraService compra;
+    private CompraService compraService;
 }

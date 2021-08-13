@@ -1,9 +1,17 @@
 package br.com.zup.Sistema_Loja.dtos;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
 public class ClienteDTO {
 
+    @NotBlank(message = "{validacao.nome.cliente}")
     private String nome;
+
+    @NotBlank(message = "{validacao.cpf.cliente}")
     private String cpf;
+
+    @Email(message = "{validacao.email.cliente}")
     private String email;
 
     public ClienteDTO() {
